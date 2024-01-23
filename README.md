@@ -54,8 +54,13 @@ The device address is set by shorting with solder the neccessary solder jumpers 
 The Python program demo_oled.py demostrates the addressability by continiously writing a different contet to each of the eight possible device addresses. Connecting one or more 
 device will display on each a number that identify it's address. The demo uses a USB to SPI adapter, such as a plain Raspberry Pi Pico, that is compatible with the  Python package ``spi-adapter``.
 
-## Timing diagrams
-TBD
+## Timing diagram
+
+The screenshot below shows a typical address enabled SPI transaction. The first byte 
+is the control byte ``0x12`` contains the signals ``OLED_RST=1``, ``OLED_DC=0``, and is ``ADDRESS=2``, and is matched against the device address, which happens to be 2,  and causes a match. This sets the ``OLED_RST`` and ``OLED_DC`` outputs to their respective values (no change in the case of ``OLED_RST``) and then enables ``OLED_CS`` such that the rest of the bytes are processed by the OLED device.
+
+<img  src="https://raw.githubusercontent.com/zapta/greenpak_oled/main/www/signal_capture.png"
+      style="display: block;margin-left: auto;margin-right: auto;width: 100%;" />
 
 ## Makeing your own
 
