@@ -19,22 +19,22 @@ PCB OLED display side:
 <img  src="https://raw.githubusercontent.com/zapta/greenpak_oled/main/www/greenpak_oled_rear.png"
       style="display: block;margin-left: auto;margin-right: auto;width: 80%;" />
 
-
 ## Protocol
 
-A SPI transaction is a sequence of bytes transfer between a high-to-low and a low-to-high transions of the ``CS`` signal. To tag a transaction with a device address, prepend to it a control byte which include the target devcie address as well as the desired states of the SSD1306 OLED ``RST`` and ``DC`` inputs.
+A SPI transaction is a sequence of bytes transfer between a high-to-low and a low-to-high transitions of the ``CS`` signal. To tag a transaction with a device address, prepend to it a control byte which include the target device address as well as the desired states of the SSD1306 OLED ``RST`` and ``DC`` inputs.
 
 | Bit field    | Function     | Description     |
 |--------------|-------------|------------|
 | Bits [7:5]   |  Reserved   | Set to 0.      |
 | Bits [4:4]   |  RST        | The value of the OLED RST input. |
 | Bits [3:4]   |  DC         | The value of the OLED D/C input  |
-| Bits [2:1]   |  Address    | The target devcie address in the range [0, 7]   |
+| Bits [2:1]   |  Address    | The target device address in the range [0, 7]   |
 
 The address of each device is set by its three solder jumbers, with an open jumper
 representing ``0`` and short jumper representing ``1``
 
 ## Device SPI address
+
 The device address is set by shorting with solder the neccessary solder jumpers according to this table:
 
 |Address    | A1    | A1    | A0   |
@@ -48,35 +48,38 @@ The device address is set by shorting with solder the neccessary solder jumpers 
 | 6   | Solder    |   Soler   | -  |
 | 7   | Solder    |   Solder   | Solder  |
 
+## The demo program
 
-## The Demo program
-
-The Python program demo_oled.py demostrates the addressability by continiously writing a different contet to each of the eight possible device addresses. Connecting one or more 
+The Python program demo_oled.py demonstrates the addressability by continuously writing a different content to each of the eight possible device addresses. Connecting one or more 
 device will display on each a number that identify it's address. The demo uses a USB to SPI adapter, such as a plain Raspberry Pi Pico, that is compatible with the  Python package ``spi-adapter``.
 
-## Timing diagram
+## Timing diagrams
 
 The screenshot below shows a typical address enabled SPI transaction. The first byte 
 is the control byte ``0x12`` contains the signals ``OLED_RST=1``, ``OLED_DC=0``, and is ``ADDRESS=2``, and is matched against the device address, which happens to be 2,  and causes a match. This sets the ``OLED_RST`` and ``OLED_DC`` outputs to their respective values (no change in the case of ``OLED_RST``) and then enables ``OLED_CS`` such that the rest of the bytes are processed by the OLED device.
 
-<img  src="https://raw.githubusercontent.com/zapta/greenpak_oled/main/www/signal_capture.png"
+<img  src="https://raw.githubusercontent.com/zapta/greenpak_oled/main/www/signal_capture1.png"
       style="display: block;margin-left: auto;margin-right: auto;width: 100%;" />
 
-## Makeing your own
+The following diagram zoom on the control byte. Note that the ``OLED_DC`` (and so ``OLED_RST`` when changed) stabilizes on its new level before  ``OLED_CS`` is asserted low.
+
+<img  src="https://raw.githubusercontent.com/zapta/greenpak_oled/main/www/signal_capture2.png"
+      style="display: block;margin-left: auto;margin-right: auto;width: 100%;" />
+
+## Making your own 
 
 To make your own Addressable SPI OLED display follow these steps:
+
 1. Order the PCB and components.
 1. Assemble the components, including the OLED panel which is soldered to the 30 pags strip.
 1. Program the GreenPAK device as described below.
 1. Set the display address on the SPI bus by soldering the necessary solder jumpers.
 
-
 ## Flashing the GreenPAK
 
-Flashing the GreenPAK IC can be done in-cirucit via the programming pads which provides access to its I2C pins. The Python program flasher.py allows to program it using an USB to I2C adapter such as the Raspberry Pi Pico, which is supported by the Python ``i2c_adapter`` package. 
+Flashing the GreenPAK IC can be done in-circuit via the programming pads which provides access to its I2C pins. The Python program flasher.py allows to program it using an USB to I2C adapter such as the Raspberry Pi Pico, which is supported by the Python ``i2c_adapter`` package. 
 
 ## FAQ
-
 
 Q: What SPI mode is used?
 
@@ -86,7 +89,7 @@ A: SPI mode 0 as required by the SSD1306
 
 Q: What SPI speeds are supported?
 
-A: We tested it successfuly with 4Mhz SPI clock.
+A: We tested it successfully with 4Mhz SPI clock.
 
 ---
 
@@ -104,7 +107,7 @@ A: The Go Configure tool is available for free from Renesas and it allows to edi
 
 Q: Why GreenPAK?
 
-A: They are inexpensive, stand alone, flexible, have a small footprint, not requing supporting functionality.
+A: They are inexpensive, stand alone, flexible, have a small footprint, not requiring glue components.
 
 ---
 
@@ -114,14 +117,6 @@ A: None whatsoever, the design is provided 'as-is'.
 
 ---
 
-Q: This design doesn't uses MISO. Is it possible have MISO reading with addressible SPI?
+Q: This design doesn't uses MISO. Is it possible have MISO reading with addressable SPI?
 
 A: Yes. A MISO signal can be used without having to change the GreenPAK's design.
-
-
-
-
-
-
-
-
