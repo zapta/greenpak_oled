@@ -4,9 +4,8 @@ from greenpak import driver, i2c, utils
 import time
 import sys
 
-#port = "COM20"
 port = "COM17"
-file_name = "./addressable_oled.hex"
+file_name = "../greenpak/greenpak_oled.hex"
 #device_code = 15 
 
 i2c_driver = i2c.GreenPakI2cAdapter(port = port)
