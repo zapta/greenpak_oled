@@ -1,6 +1,6 @@
 # Addressable SPI OLED display
 
-This design demonstrates the techinque of adding device addressing capabilities to a SPI bus. This provides the speed and distance of an SPI bus with the simplicity and extensibility of an I2C bus.
+This design demonstrates the technique of adding device addressing capabilities to a SPI bus. This provides the speed and distance of an SPI bus with the simplicity and extensibility of an I2C bus.
 
 The addressability is achieved using a Renesas's GreenPAK SPLD devices which interprets the first byte of each SPI transaction as a meta control byte and passes the CS signal to the device only if the address encoded in the control byte matches the device's address.
 
@@ -35,7 +35,7 @@ representing ``0`` and short jumper representing ``1``
 
 ## Device SPI address
 
-The device address is set by shorting with solder the neccessary solder jumpers according to this table:
+The device address is set by shorting with solder the necessary solder jumpers according to this table:
 
 |Address    | A1    | A1    | A0   |
 |:--------------:|:-------------:|:------------:|:----:|
@@ -66,7 +66,24 @@ The following diagram zoom on the control byte. Note that the ``OLED_DC`` (and s
 <img  src="https://raw.githubusercontent.com/zapta/greenpak_oled/main/www/signal_capture2.png"
       style="display: block;margin-left: auto;margin-right: auto;width: 100%;" />
 
-## Making your own 
+
+## How it works?
+
+The diagram below shows the main functional blocks of the GreenPAK design. For full details and the latest version, explore the design file ``greenpak_oled.gp6`` file using the Renesas design tool.
+
+1. I2C programming support. Used only for flashing or reflashing the GreenPAK device and is not used in normal operation.
+2. Serial to parallel shifter. A shift register that provides the four previous SPI bit values.
+3. First byte detector. Generates signal that indicates the time of the 8'th bit of the control byte (the first byte in the SPI transaction)
+4. Address matcher. On the last bit of the control byte, tests if the address matches.
+5. OLED_CS generator. A latch that generates the the ``OLED_CS`` output signals.
+6. Auxiliary signals generators. Latches for the ``OLED_RST`` and ``OLED_DC`` output signals.
+  
+
+
+<img  src="https://raw.githubusercontent.com/zapta/greenpak_oled/main/www/greenpak_oled.svg"
+      style="display: block;margin-left: auto;margin-right: auto;width: 100%;" />
+
+## Making your own
 
 To make your own Addressable SPI OLED display follow these steps:
 
