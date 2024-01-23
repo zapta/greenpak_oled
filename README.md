@@ -89,7 +89,19 @@ Q: Why only 3 address jumpers?
 
 A: We run out of resources in the GreenPAK device. 
 
-----
+---
+
+Q: I want to change the design of the GreenPAK device, what tools do I need?
+
+A: The Go Configure tool is available for free from Renesas and it allows to edit and test GreenPAK designs.  https://www.renesas.com/us/en/software-tool/go-configure-software-hub
+
+---
+
+Q: Why GreenPAK?
+
+A: They are inexpensive, stand alone, flexible, have a small footprint, not requing supporting functionality.
+
+---
 
 Q: What kind of a guarantee do you provide with this design?
 
