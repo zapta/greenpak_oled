@@ -24,7 +24,7 @@ PCB OLED display side:
 
 A SPI transaction is a sequence of bytes transfer between a high-to-low and a low-to-high transions of the ``CS`` signal. To tag a transaction with a device address, prepend to it a control byte which include the target devcie address as well as the desired states of the SSD1306 OLED ``RST`` and ``DC`` inputs.
 
-| Bit field    | Funtion     | Description     |
+| Bit field    | Function     | Description     |
 |--------------|-------------|------------|
 | Bits [7:5]   |  Reserved   | Set to 0.      |
 | Bits [4:4]   |  RST        | The value of the OLED RST input. |
