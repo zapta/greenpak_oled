@@ -76,8 +76,7 @@ class MyLumaSerial:
 luma_devices = {}
 
 spi = SpiAdapter(port = my_port)
-#for device_addr in range(8):
-for device_addr in [2]:
+for device_addr in range(8):
   luma_serial = MyLumaSerial(spi, device_addr)
   luma_device = ssd1306(luma_serial, width=128, height=64, rotate=0)
   # luma_device.persist = True  # Do not clear display on exit
