@@ -34,6 +34,21 @@ A SPI transaction is a sequence of bytes transfer between a high-to-low and a lo
 The address of each device is set by its three solder jumbers, with an open jumper
 representing ``0`` and short jumper representing ``1``
 
+## Device SPI address
+The device address is set by shorting with solder the neccessary solder jumpers according to this table:
+
+|Address    | A1    | A1    | A0   |
+|:--------------:|:-------------:|:------------:|:----:|
+| 0   |  -   |  -    |  - |
+| 1   |  -   |  -    |  Solder |
+| 2   |  -   |   Solder   | -  |
+| 3   |  -   |   Solder   | Solder  |
+| 4   | Solder    |  -    | -  |
+| 5   | Solder    |  -    |  Solder |
+| 6   | Solder    |   Soler   | -  |
+| 7   | Solder    |   Solder   | Solder  |
+
+
 ## The Demo program
 
 The Python program demo_oled.py demostrates the addressability by continiously writing a different contet to each of the eight possible device addresses. Connecting one or more 
@@ -42,8 +57,20 @@ device will display on each a number that identify it's address. The demo uses a
 ## Timing diagrams
 TBD
 
-## Construction
-TBD
+## Makeing your own
+
+To make your own Addressable SPI OLED display follow these steps:
+1. Order the PCB and components.
+1. Assemble the components, including the OLED panel which is soldered to the 30 pags strip.
+1. Program the GreenPAK device as described below.
+1. Set the display address on the SPI bus by soldering the necessary solder jumpers.
+
+
+## Flashing the GreenPAK
+
+Flashing the GreenPAK IC can be done in-cirucit via the programming pads which provides access to its I2C pins. The Python program flasher.py allows to program it using an USB to I2C adapter such as the Raspberry Pi Pico, which is supported by the Python ``i2c_adapter`` package. 
+
+
 
 
 
