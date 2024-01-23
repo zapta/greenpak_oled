@@ -1046,7 +1046,7 @@
   (gr_text locked "1.3{dblquote} OLED\nSSD1306\n" (at -0.508 -4.191) (layer "B.SilkS") (tstamp c92989b0-3c55-4e84-b7e1-b3e5d450c783)
     (effects (font (size 1.5 1.5) (thickness 0.2)) (justify mirror))
   )
-  (gr_text "RECOMANDED 1mm PCB" (at -0.0254 12.2428) (layer "F.SilkS") (tstamp 06bf1dc6-f97e-4989-b9d1-831c3816d091)
+  (gr_text "RECOMMENDED 1mm PCB" (at -0.0254 12.2428) (layer "F.SilkS") (tstamp 06bf1dc6-f97e-4989-b9d1-831c3816d091)
     (effects (font (size 0.75 0.75) (thickness 0.1)) (justify bottom))
   )
   (gr_text locked "SLG46826G" (at -0.5588 -0.9906) (layer "F.SilkS") (tstamp 0fb4d32d-c6de-4839-9cb7-86e8585bc8d5)
