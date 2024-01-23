@@ -70,6 +70,40 @@ To make your own Addressable SPI OLED display follow these steps:
 
 Flashing the GreenPAK IC can be done in-cirucit via the programming pads which provides access to its I2C pins. The Python program flasher.py allows to program it using an USB to I2C adapter such as the Raspberry Pi Pico, which is supported by the Python ``i2c_adapter`` package. 
 
+## FAQ
+
+
+Q: What SPI mode is used?
+
+A: SPI mode 0 as required by the SSD1306
+
+---
+
+Q: What SPI speeds are supported?
+
+A: We tested it successfuly with 4Mhz SPI clock.
+
+---
+
+Q: Why only 3 address jumpers?
+
+A: We run out of resources in the GreenPAK device. 
+
+----
+
+Q: What kind of a guarantee do you provide with this design?
+
+A: None whatsoever, the design is provided 'as-is'.
+
+---
+
+Q: This design doesn't uses MISO. Is it possible have MISO reading with addressible SPI?
+
+A: Yes. A MISO signal can be used without having to change the GreenPAK's design.
+
+
+
+
 
 
 
