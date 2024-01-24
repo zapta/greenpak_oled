@@ -10,6 +10,7 @@ Resources
 * PCB schematic: https://github.com/zapta/greenpak_oled/blob/main/kicad/greenpak_oled.pdf
 * GreenPAK design schematic: https://github.com/zapta/greenpak_oled/blob/main/greenpak/greenpak_oled.svg
 * GreenPAK source and hex files: https://github.com/zapta/greenpak_oled/tree/main/greenpak
+* Interactive BOM: https://htmlpreview.github.io/?https://github.com/zapta/greenpak_oled/blob/main/kicad/bom/ibom.html
 
 <br>
 
@@ -94,7 +95,7 @@ To make your own Addressable SPI OLED display follow these steps:
 1. Program the GreenPAK device as described below.
 1. Set the display address on the SPI bus by soldering the necessary solder jumpers.
 
-The Github repository contains and [interactive BOM](https://htmlpreview.github.io/?https://github.com/zapta/greenpak_oled/blob/main/kicad/bom/ibom.html) that helps identifying the components and their values.
+The Github repository contains an HTML interactive BOM that helps identifying the components and their values.
 
 
 ## Flashing the GreenPAK
