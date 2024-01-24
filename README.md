@@ -94,6 +94,9 @@ To make your own Addressable SPI OLED display follow these steps:
 1. Program the GreenPAK device as described below.
 1. Set the display address on the SPI bus by soldering the necessary solder jumpers.
 
+The Github repository contains and [interactive BOM](https://htmlpreview.github.io/?https://github.com/zapta/greenpak_oled/blob/main/kicad/bom/ibom.html) that helps identifying the components and their values.
+
+
 ## Flashing the GreenPAK
 
 Flashing the GreenPAK IC can be done in-circuit via the programming pads which are compatible with the [GreenPAK Pogo Probe](https://github.com/zapta/greenpak_pogo). The provided Python program ``flasher.py`` allows to program it using an USB to I2C adapter such as the Raspberry Pi Pico, or the Sparkfun Pro Micro RP2040. which are supported by the Python ``i2c_adapter`` package. 
