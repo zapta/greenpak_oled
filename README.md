@@ -2,7 +2,9 @@
 
 This design demonstrates the technique of adding device addressing capabilities to a SPI bus. This provides the speed and distance of an SPI bus with the simplicity and extensibility of an I2C bus.
 
-The addressability is achieved using a Renesas's GreenPAK SPLD devices which interprets the first byte of each SPI transaction as a meta control byte and passes the CS signal to the device only if the address encoded in the control byte matches the device's address.
+The addressability is achieved using a Renesas's GreenPAK SPLD devices which interprets the first byte of each SPI transaction as a meta control byte and passes the CS signal to the device only if the address encoded in the control byte matches the device's address. The supported OLED displays are 1.3" SSD1306 and SH1106. 
+
+> **NOTE**: The SSD1306 and the SH1106 are compatible at the hardware level but require different software drivers.
 
 Resources
 * PCB schematic: https://github.com/zapta/greenpak_oled/blob/main/kicad/greenpak_oled.pdf
@@ -21,7 +23,7 @@ PCB OLED display side:
 
 ## Protocol
 
-A SPI transaction is a sequence of bytes transfer between a high-to-low and a low-to-high transitions of the ``CS`` signal. To tag a transaction with a device address, prepend to it a control byte which include the target device address as well as the desired states of the SSD1306 OLED ``RST`` and ``DC`` inputs.
+A SPI transaction is a sequence of bytes transfer between a high-to-low and a low-to-high transitions of the ``CS`` signal. To tag a transaction with a device address, prepend to it a control byte which include the target device address as well as the desired states of the OLED ``RST`` and ``DC`` inputs.
 
 | Bit field    | Function     | Description     |
 |--------------|-------------|------------|
@@ -98,9 +100,15 @@ Flashing the GreenPAK IC can be done in-circuit via the programming pads which a
 
 ## FAQ
 
+Q: What is the operating voltage of the OLED display.
+
+A: 3.3V nominal.
+
+---
+
 Q: What SPI mode is used?
 
-A: SPI mode 0 as required by the SSD1306
+A: SPI mode 0 as required by the SSD1306 and SH1106 controllers.
 
 ---
 
