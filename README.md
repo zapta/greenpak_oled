@@ -94,7 +94,7 @@ To make your own Addressable SPI OLED display follow these steps:
 
 ## Flashing the GreenPAK
 
-Flashing the GreenPAK IC can be done in-circuit via the programming pads which provides access to its I2C pins. The Python program flasher.py allows to program it using an USB to I2C adapter such as the Raspberry Pi Pico, which is supported by the Python ``i2c_adapter`` package. 
+Flashing the GreenPAK IC can be done in-circuit via the programming pads which are compatible with the [GreenPAK Pogo Probe](https://github.com/zapta/greenpak_pogo). The provided Python program ``flasher.py`` allows to program it using an USB to I2C adapter such as the Raspberry Pi Pico, or the Sparkfun Pro Micro RP2040. which are supported by the Python ``i2c_adapter`` package. 
 
 ## FAQ
 
