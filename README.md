@@ -22,6 +22,7 @@ Components side:
 <br>
 
 Display panel side:
+
 <img  src="www/greenpak_oled_rear.png"
       style="display: block;margin-left: auto;margin-right: auto;width: 80%;" />
 
@@ -64,10 +65,14 @@ device will display on each a number that identify it's address. The demo uses a
 The screenshot below shows a typical address enabled SPI transaction. The first byte 
 is the control byte ``0x12`` contains the signals ``OLED_RST=1``, ``OLED_DC=0``, and is ``ADDRESS=2``, and is matched against the device address, which happens to be 2,  and causes a match. This sets the ``OLED_RST`` and ``OLED_DC`` outputs to their respective values (no change in the case of ``OLED_RST``) and then enables ``OLED_CS`` such that the rest of the bytes are processed by the OLED device.
 
+<br>
+
 <img  src="www/signal_capture1.png"
       style="display: block;margin-left: auto;margin-right: auto;width: 100%;" />
 
 The following diagram zoom on the control byte. Note that the ``OLED_DC`` (and so ``OLED_RST`` when changed) stabilizes on its new level before  ``OLED_CS`` is asserted low.
+
+<br>
 
 <img  src="www/signal_capture2.png"
       style="display: block;margin-left: auto;margin-right: auto;width: 100%;" />
@@ -84,7 +89,7 @@ The diagram below shows the main functional blocks of the GreenPAK design. For f
 5. OLED_CS generator. A latch that generates the the ``OLED_CS`` output signals.
 6. Auxiliary signals generators. Latches for the ``OLED_RST`` and ``OLED_DC`` output signals.
   
-
+<br>
 
 <img  src="www/greenpak_oled.svg"
       style="display: block;margin-left: auto;margin-right: auto;width: 100%;" />
