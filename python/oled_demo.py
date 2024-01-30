@@ -9,7 +9,7 @@ import datetime
 # sys.path.insert(0, '../src/')
 
 from spi_adapter import SpiAdapter, AuxPinMode
-from luma.oled.device import ssd1306
+from luma.oled.device import ssd1306, sh1106
 from luma.core.render import canvas
 from PIL import ImageFont, ImageColor
 
@@ -78,7 +78,8 @@ luma_devices = {}
 spi = SpiAdapter(port = my_port)
 for device_addr in range(8):
   luma_serial = MyLumaSerial(spi, device_addr)
-  luma_device = ssd1306(luma_serial, width=128, height=64, rotate=0)
+  #luma_device = ssd1306(luma_serial, width=128, height=64, rotate=0)
+  luma_device = sh1106(luma_serial, width=128, height=64, rotate=0)
   # luma_device.persist = True  # Do not clear display on exit
   luma_devices[device_addr] = luma_device
 
