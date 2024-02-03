@@ -1,0 +1,3 @@
+* Create a gerbers release with rounded traces.
+
+* Slightly increase the back silkscreen rectangle with the display boundary. 
