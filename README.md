@@ -17,14 +17,21 @@ Resources
 Components side:
 
 <img  src="www/greenpak_oled.png"
-      style="display: block;margin-left: auto;margin-right: auto;width: 80%;" />
+      style="display: block;margin-left: auto;margin-right: auto;width: 40%;" />
 
 <br>
 
 Display panel side:
 
 <img  src="www/greenpak_oled_rear.png"
-      style="display: block;margin-left: auto;margin-right: auto;width: 80%;" />
+      style="display: block;margin-left: auto;margin-right: auto;width: 40%;" />
+
+<br>
+
+Wiring diagram (for oled_demo.py):
+
+<img  src="www/wiring_diagram.png"
+      style="display: block;margin-left: auto;margin-right: auto;width: 100%;" />
 
 ## Protocol
 
@@ -55,7 +62,7 @@ The device address is set by shorting with solder the necessary solder jumpers a
 | 6   | Solder    |   Soler   | -  |
 | 7   | Solder    |   Solder   | Solder  |
 
-## The demo program
+## oled_demo.py
 
 The Python program demo_oled.py demonstrates the addressability by continuously writing a different content to each of the eight possible device addresses. Connecting one or more 
 device will display on each a number that identify it's address. The demo uses a USB to SPI adapter, such as a plain Raspberry Pi Pico, that is compatible with the  Python package ``spi-adapter``.
