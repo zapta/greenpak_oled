@@ -1801,7 +1801,7 @@
     (property "Value" "POGO_SOCKET" (at 135.255 140.208 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "greenpak_oled:POGO_SOCKET" (at 128.524 151.892 0)
+    (property "Footprint" "greenpak_oled:GREENPAK_POGO_SOCKET" (at 128.524 151.892 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 130.429 130.937 0) (do_not_autoplace)

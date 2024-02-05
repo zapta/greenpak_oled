@@ -1,0 +1,67 @@
+(footprint "GREENPAK_POGO_SOCKET" (version 20221018) (generator pcbnew)
+  (layer "F.Cu")
+  (descr "Through hole straight pin header, 1x01, 2.54mm pitch, single row")
+  (tags "Through hole pin header THT 1x01 2.54mm single row")
+  (attr through_hole)
+  (fp_text reference "REF**" (at 2.54 -2.921) (layer "F.SilkS") hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 6c50d304-4606-47dc-966e-5ce9cce54912)
+  )
+  (fp_text value "POGO_SOCKET" (at 0 2.33) (layer "F.Fab") hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 86a9f2cd-c84c-4f67-881e-c331171fcf5a)
+  )
+  (fp_line (start -3.4 0) (end -3.4 0)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp 4acddb82-a6b9-4d8a-ac5d-290c0b28f4cb))
+  (fp_line (start -2.4 -1) (end -2.2 -1)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp 8cdb2668-64c2-4289-91eb-55c144eb25e0))
+  (fp_line (start -2.2 -1) (end -2.2 -2.1)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp 814f8a8e-defc-4513-a1df-f76d432b2083))
+  (fp_line (start -1.2 -3.1) (end -1.2 -3.1)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp 4f7cb04f-cc0a-4e97-aa1c-25bf4a05eaaf))
+  (fp_line (start -0.2 -2.1) (end -0.2 -2)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp da2fd99f-dbc9-4715-95cc-fd81d640b6ef))
+  (fp_line (start -0.2 -1) (end -0.2 -2)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp a5f41e95-2598-46e4-bbd1-60c26abc97d7))
+  (fp_line (start -0.2 -1) (end 2.4 -1)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp 6344d9e2-a2a2-4146-a3ff-8d94f1ff3eb7))
+  (fp_line (start 2.4 1) (end -2.4 1)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp e5b96053-5a92-4558-bd76-4b72ddcb40de))
+  (fp_line (start 3.4 0) (end 3.4 0)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp e26f7bed-abf8-4c4b-aa14-4ee1662e4f36))
+  (fp_arc (start -3.4 0) (mid -3.107107 -0.707107) (end -2.4 -1)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp 1d2b14b7-c51f-4090-adb0-6b472866244c))
+  (fp_arc (start -2.4 1) (mid -3.107107 0.707107) (end -3.4 0)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp df932d43-e7d5-45ec-a135-825520ffe576))
+  (fp_arc (start -2.2 -2.1) (mid -1.907107 -2.807107) (end -1.2 -3.1)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp 5c19ad56-4389-4008-89bb-03377600b167))
+  (fp_arc (start -1.2 -3.1) (mid -0.492893 -2.807107) (end -0.2 -2.1)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp 526e4030-4c21-4527-9edf-1c38fe8a7c6f))
+  (fp_arc (start 2.4 -1) (mid 3.107107 -0.707107) (end 3.4 0)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp e3d24fe5-1618-4bf9-8de9-ae7f3e74c7ce))
+  (fp_arc (start 3.4 0) (mid 3.107107 0.707107) (end 2.4 1)
+    (stroke (width 0.1) (type default)) (layer "F.SilkS") (tstamp 7358d87f-cf0d-40f9-b6d3-efc176ce54f9))
+  (pad "1" thru_hole circle (at -2.4 0) (size 1.7 1.7) (drill 0.75) (layers "*.Cu" "F.Mask") (tstamp fc40d8b7-bd48-4929-91f7-ce773af3529f))
+  (pad "2" thru_hole circle (at 0 0) (size 1.7 1.7) (drill 0.75) (layers "*.Cu" "F.Mask") (tstamp bf29d5b2-1ed9-48cf-a932-2258e5e431d0))
+  (pad "3" thru_hole circle (at 2.4 0) (size 1.7 1.7) (drill 0.75) (layers "*.Cu" "F.Mask") (tstamp 2c51d498-dc6c-4046-b603-769fb1fc0438))
+  (pad "4" thru_hole circle (at -1.2 -2.1) (size 1.7 1.7) (drill 0.75) (layers "*.Cu" "F.Mask") (tstamp c91260e9-e7bf-4636-b496-aaa849e7d212))
+  (group "" (id f9d4da0c-bc41-4efb-b993-c5210c128cc1)
+    (members
+      1d2b14b7-c51f-4090-adb0-6b472866244c
+      4acddb82-a6b9-4d8a-ac5d-290c0b28f4cb
+      4f7cb04f-cc0a-4e97-aa1c-25bf4a05eaaf
+      526e4030-4c21-4527-9edf-1c38fe8a7c6f
+      5c19ad56-4389-4008-89bb-03377600b167
+      6344d9e2-a2a2-4146-a3ff-8d94f1ff3eb7
+      7358d87f-cf0d-40f9-b6d3-efc176ce54f9
+      814f8a8e-defc-4513-a1df-f76d432b2083
+      8cdb2668-64c2-4289-91eb-55c144eb25e0
+      a5f41e95-2598-46e4-bbd1-60c26abc97d7
+      da2fd99f-dbc9-4715-95cc-fd81d640b6ef
+      df932d43-e7d5-45ec-a135-825520ffe576
+      e26f7bed-abf8-4c4b-aa14-4ee1662e4f36
+      e3d24fe5-1618-4bf9-8de9-ae7f3e74c7ce
+      e5b96053-5a92-4558-bd76-4b72ddcb40de
+    )
+  )
+)
