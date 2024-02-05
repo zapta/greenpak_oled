@@ -1,6 +1,2 @@
 
-* Slightly increase the back silkscreen rectangle with the display boundary. 
 
-* Update pogo footprint.
-
-* Regenerate gerbers
